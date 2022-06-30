@@ -1,12 +1,17 @@
-import { Layout, Form, Input, Button } from 'antd';
-import GooglePlacesAutoComplete, { geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
+import { Layout, Form, Input, Button, message, Dropdown, Select } from 'antd';
 import CodeIcon from './components/CodeIcon';
 import { Link } from 'react-router-dom';
-import thisGuyGIF from './assets/office-me.gif';
-
-function App() {
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
+import VITForm from './modules/VITForm';
+import ThankYou from './modules/Thank you';
+import {Amplify} from 'aws-amplify';
+import awsconfig from '../src/aws-exports.js';
+Amplify.configure(awsconfig);
+const App = () => {
   const { Header, Footer, Content, Sider } = Layout;
-  const {TextArea } = Input;
+  const navigate = useNavigate();
 
   return (
     <Layout style={{ height: '55rem'}}>
@@ -34,49 +39,10 @@ function App() {
 
         <Content      
         >
-          <div style={{
-            display: 'flex',
-            justifyContent:'center',
-            alignItems: 'center',
-            width: '100%',
-
-
-          }}>
-            <Form
-              layout='vertical'
-              size='large'
-              wrapperCol={{ span: 30 }}
-              >
-                <Form.Item label="Name Of Place" required>
-                  <Input label="Eg: Technology Tower" />
-                </Form.Item>
-                <Form.Item label="Say Something About it" required>
-                <TextArea rows={4} placeholder='place has good cuisines for eg...' />
-                </Form.Item>
-                <Form.Item label='Enter the location' required>
-                    <GooglePlacesAutoComplete 
-                        apiKey="AIzaSyDZeTDL4gyHOzvU0L3rPwnJ2xr2Ez7j4Lo"    
-                    />
-                </Form.Item> 
-                <Button 
-                      style={{
-                        backgroundColor: '#3B44F6',
-                        color: 'white',
-                        borderColor: '#3B44F6',
-                        fontWeight: 600,
-                        display: 'flex',
-                        alignSelf: 'center',
-                        marginLeft: '3rem'
-                        
-                    }}
-                >
-                  Submit
-                </Button>         
-
-
-            </Form>
-          </div>
-
+          <Routes>
+            <Route path="/" element={<VITForm />} />
+            <Route path='/thankyou' element={<ThankYou />} />
+          </Routes>
 
         </Content>
         <Footer style={{

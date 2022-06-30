@@ -1,0 +1,17 @@
+enum TYPE {
+  ACADEMICS
+  SHOP
+  RESTARUANT
+  CAFE
+  TOURIST_SPOT
+}
+
+type Places @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  description: String!
+  type: TYPE
+  lat: Float
+  lng: Float!
+}
+ 

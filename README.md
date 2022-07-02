@@ -74,3 +74,20 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+# Test the app in your local machine using Docker🐳
+1. Build the Docker image for the app build from the Dockerfile provided by cloning the repo in you local machine and then run this command - 
+```sh
+  docker build -t app-name:version-num
+```
+
+2. Build and run the container instance from the image created (remember the image tag u gave)
+```sh
+  docker run -d --name app-name -p 80:80 app-name:version-num
+```
+
+3. Now go to localhost of your browser and voila!
+
+
+

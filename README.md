@@ -1,3 +1,9 @@
+# Around the Campus for VIT App
+This web app is only to collect some great restaurants, cafes, places to visit or go to and also places around our campus like acacdemic buildings and such and this will be shown in an app developed my me to help out new people like the fresehers or guests or such to visit and stay in our campus without worrying of what's this building called or where the heck is this academic building (CBMR, if you know what i mean).
+
+# Contribution
+Please feel free to issue a problem or make a PR to add some new features or changes to the app.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
